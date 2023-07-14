@@ -79,11 +79,81 @@ i.login::before {
     content: "\f2f6";
 }
 
-a {
+/* markdown */
+
+.markdown a {
     color: #58a6ff;
     text-decoration: none;
 }
 
-a:hover {
+.markdown a:hover {
     text-decoration: underline;
+}
+
+.markdown h1 {
+    margin-bottom: 10px;
+}
+
+.markdown h2 {
+    border-top: 1px solid rgba(84, 84, 84, 0.48);
+    margin: 4rem 0 1.8rem;
+    padding-top: 1.8rem;
+}
+
+.markdown h3 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol {
+    margin-bottom: 1.2em;
+    font-size: 14px;
+}
+
+.markdown a {
+    text-decoration: none;
+    color: rgb(0, 153, 255);
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.markdown blockquote,
+.markdown pre {
+    margin: 28px 0;
+    padding: 20px 28px 20px 28px;
+    border-radius: 8px;
+    overflow-x: auto;
+    transition: color .5s, background-color .5s;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #0000008c;
+    background-color: #242424;
+}
+
+.markdown code {
+    color: #9cdcfe;
+    padding: 2px 4px;
+    border-radius: 2px;
+    background-color: #2d2d2d;
+}
+
+.markdown li {
+    list-style-type: none;
+    margin-left: 18px;
+}
+
+.markdown li::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 100px;
+    background: #717171;
+    position: relative;
+    top: 16px;
+    left: -16px;
 }
