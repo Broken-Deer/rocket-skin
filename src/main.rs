@@ -19,17 +19,38 @@
 #[macro_use]
 extern crate rocket;
 
+pub mod routes;
+pub mod middleware;
+pub mod controller;
+pub mod database;
 
+use std::path::{PathBuf, Path};
+
+use rocket::fs::NamedFile;
 use rocket_dyn_templates::Template;
 
 
 #[launch]
 fn rocket() -> _ {
     rocket::build()
-        // .mount(
-        //     "/",
-        //     routes![],
-        // )
+        .mount(
+            "/",
+            routes![index, assets],
+        )
         // .register("/", catchers![])
+        .mount("/auth", routes![])
         .attach(Template::fairing())
+}
+
+#[get("/")]
+async fn index() -> Template {
+    Template::render("index", ())
+}
+
+#[get("/<file..>")]
+pub async fn assets(file: PathBuf) -> Option<NamedFile> {
+    println!("file: {:?}", file);
+    NamedFile::open(Path::new("public").to_path_buf().join(file))
+        .await
+        .ok()
 }

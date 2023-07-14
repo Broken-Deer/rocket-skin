@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: url("/assets/background.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+.title-bar {
+    font-size: 250%;
+    font-family: minecraft;
+    color: #fff;
+}
+
+.desc-bar {
+    margin-top: 20px;
+    color: #fff;
+}
+
+.button {
+    margin-top: 50px;
+    padding: 16px 44px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+    padding: 0 10vw;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    color: #fff;
+}
